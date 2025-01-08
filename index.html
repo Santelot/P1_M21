@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M21</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;}
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select {font-size: 1em; padding: 5px;}
+        .activity { margin-bottom: 20px; }
+         .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+             const activity4Step6 = document.getElementById('activity-4-step-6');
+             const activity4Step7 = document.getElementById('activity-4-step-7');
+
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                 if (activity4Step6) activity4Step6.style.display = 'block';
+                 if (activity4Step7) activity4Step7.style.display = 'block';
+
+
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if (activity4Step6) activity4Step6.style.display = 'none';
+                if (activity4Step7) activity4Step7.style.display = 'none';
+
+
+            } else {
+                activity2.style.display = 'block';
+                 if (activity4Step6) activity4Step6.style.display = 'block';
+                 if (activity4Step7) activity4Step7.style.display = 'block';
+            }
+             document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P1-M21</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+         <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+          <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Preparación de materiales para la misión y dispositivos listos para usar Scratch Jr.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">Preparar los materiales necesarios para impartir la misión y garantizar que los dispositivos estén listos para usar Scratch Jr. - Dispositivos con Scratch Jr. (app o web). - Magic Boards. - 6 ladrillos LEGO por estudiante.</td>
+                        <td style="padding: 10px; vertical-align: top;">N/A</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="3">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 3 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Dar la bienvenida a los estudiantes para iniciar un ambiente positivo.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Dar la bienvenida a los estudiantes para iniciar un ambiente positivo.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Hola, Genios! 🌳 ¡Bienvenidos a un nuevo día de aventuras creativas en el parque! Hoy vamos a convertirnos en verdaderos animadores y dar vida a nuestros propios personajes en Scratch Jr. ¿Están listos para explorar, crear y divertirnos juntos en este día en el parque? ¡Vamos a empezar esta aventura con toda la energía!”</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Evaluar cómo se sienten los estudiantes para conectarse emocionalmente.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Creadores de Animaciones! 🤸 Muéstrenme cómo se sienten hoy: - Si están emocionados y listos para saltar en los charcos de alegría, hagan la Pose de Saltando en el Charco (simulen un pequeño salto con las manos hacia arriba y los pies levantados 💦). - Si están curiosos y observando la naturaleza, como un explorador buscando maravillas, hagan la Pose de Observando la Naturaleza (pongan una mano en la frente, como si estuvieran observando algo interesante 🧐). ¡Muéstrenme esas poses!”</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0,5 minutos):</strong> Realizar el ritual de agradecimiento para crear camaradería y unión.</td>
+                         <td style="padding: 10px; vertical-align: top;">“Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios! Hoy vamos a crear animaciones increíbles en el parque, programar aventuras y divertirnos mucho. ¡A dar rienda suelta a nuestra creatividad!'"</td>
+                     </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0,5 minutos):</strong> Presentar los objetivos de la misión para que los estudiantes sepan qué se logrará hoy.</td>
+                        <td style="padding: 10px; vertical-align: top;">“Hoy tenemos una misión en el parque, Genios: 1. Vamos a crear animaciones donde los personajes exploren el parque. 2. Programaremos interacciones divertidas entre los personajes. 3. ¡Vamos a compartir nuestras animaciones y celebrar nuestro día creativo en el parque! Será un día inolvidable lleno de creatividad y aprendizaje.”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4">
+           <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Gym ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Activar la concentración y preparar a los estudiantes para la misión.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Introducir la actividad de gimnasia cerebral para activar la concentración y preparar a los estudiantes.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Creadores de Animaciones! 🌳 Vamos a activar nuestros cerebros con una gimnasia mental especial, inspirada en nuestro parque. Preparen sus cuerpos para moverse de forma divertida y despierta, mientras nos preparamos para animar nuestras propias historias.”</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Realizar movimientos de gimnasia cerebral enfocados en la coordinación y el enfoque, relacionados con el parque.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Ahora, Genios, vamos a movernos como si estuviéramos en el parque! ✨ - El Árbol: Levanten sus brazos como ramas y balancéense suavemente como si fueran un árbol meciéndose con la brisa. - El Camino: Trazar un camino imaginario en el aire con su dedo, como si fueran explorando una nueva ruta en el parque. - El Salto: Ahora vamos a saltar suavemente como si estuviéramos brincando sobre las rocas del parque. ¡Sientan cómo su cerebro se activa con cada movimiento!”</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1,5 minutos):</strong> Integrar la gimnasia cerebral con una breve reflexión sobre cómo la actividad los prepara para el desafío.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Excelente trabajo, Creadores! 🌟 Ahora, cuéntennos, ¿cómo se sienten después de esta gimnasia mental en el parque? ¿Sienten su cerebro más despierto y listo para la aventura? Recuerden, esta energía y concentración nos ayudará a crear animaciones increíbles en Scratch Jr. ¡Prepárense para hacer magia en la pantalla!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="23">
+             <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 23 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Creación de animaciones en Scratch Jr con diferentes niveles de desafío.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Introducir el desafío y generar entusiasmo por la actividad de creación de animaciones en Scratch Jr.</td>
+                       <td style="padding: 10px; vertical-align: top;">“¡Creadores de Animaciones, llegó el momento más emocionante del día en el parque! 🚀 Hoy vamos a poner a prueba todas nuestras habilidades en Scratch Jr con tres desafíos increíbles: 'Exploración en el Parque', 'Amigos en el Parque', y 'La Fiesta en el Parque'. Cada desafío está diseñado para que exploren diferentes aspectos de la animación. ¡Elijan su nivel y prepárense para la diversión!”</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Explicar en detalle los niveles de la misión y sus <span style="color: red; font-weight: bold;">condiciones</span>, adaptadas al tema del parque y sus diferentes desafíos.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Atención, Genios! Aquí están los desafíos que les esperan hoy en el parque: <br><br> <strong>Nivel Rookie (Básico): 'Exploración en el Parque'</strong>  <br><br> <strong>Objetivo:</strong> Crear una animación donde un personaje recorra el parque y descubra tres elementos interesantes (como árboles, un banco o un estanque). <br><br> <strong>Instrucciones:</strong> Diseña un fondo que represente un parque (puede incluir árboles, flores, y un camino). Elige un personaje que se moverá por el parque. Programa al personaje para que realice movimientos simples y se detenga frente a tres elementos del parque, como si los estuviera observando. Al detenerse, el personaje debe realizar una acción simple (como emitir un sonido o girar). <br><br>  <span style="color: red; font-weight: bold;">Condiciones:</span> Los movimientos deben ser claros y llevar al personaje a tres puntos distintos del fondo. Cada punto debe tener un elemento diferente. <br><br> <strong>Consejo:</strong> Ajusta los pasos para que el personaje se detenga en los lugares deseados antes de realizar su acción. <br><br> <strong>Nivel Master (Intermedio): 'Amigos en el Parque'</strong> <br><br>  <strong>Objetivo:</strong> Crear una animación donde el personaje principal interactúe con dos nuevos amigos y realicen actividades juntos. <br><br> <strong>Instrucciones:</strong> Añade dos personajes adicionales que representen los amigos. Diseña una escena en el parque donde los amigos se encuentren en diferentes áreas. Programa al personaje principal para que se mueva hacia cada amigo, inicie una interacción (como un saludo o una breve conversación) y luego realicen una actividad juntos (por ejemplo, saltar, girar o avanzar juntos). <br><br> <span style="color: red; font-weight: bold;">Condiciones:</span> Cada interacción debe ser única para cada amigo (diferentes movimientos o sonidos). Los personajes deben moverse juntos durante la actividad compartida. <br><br> <strong>Consejo:</strong> Usa bloques de ""esperar"" para coordinar las acciones entre el personaje principal y los amigos. <br><br> <strong>Nivel Hacker (Avanzado): 'La Fiesta en el Parque'</strong> <br><br> <strong>Objetivo:</strong> Crear una animación donde todos los personajes se reúnan y organicen una fiesta en el parque. <br><br> <strong>Instrucciones:</strong> Diseña una escena donde haya un área especial en el parque para la fiesta (puedes agregar una mesa, globos o música). Programa a los tres personajes para que se muevan hacia el área de la fiesta, uno tras otro, y realicen una secuencia coordinada (como un baile o una celebración). Añade elementos decorativos (personajes o dibujos) que interactúen durante la fiesta, como globos que se muevan o sonidos que se activen. <br><br> <span style="color: red; font-weight: bold;">Condiciones:</span> Cada personaje debe realizar al menos dos movimientos únicos durante la fiesta. Los movimientos y sonidos de los personajes deben estar sincronizados para simular un evento organizado.   <br><br> <strong>Consejo:</strong> Planifica primero los movimientos individuales y luego coordínalos utilizando bloques de ""esperar"" para sincronizar las acciones."</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Permitir que los estudiantes trabajen en el nivel elegido y desarrollen su animación, simulando un día divertido en el parque.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Es hora de animar, Creadores! 🎨 Elijan su desafío: - Rookie: ¡Exploren el parque! - Master: ¡Hagan amigos en el parque! - Hacker: ¡Organicen una fiesta en el parque! ¡Muestren toda su creatividad y habilidades en este día mágico en el parque!”</td>
+                    </tr>
+                    <tr>
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Reflexionar sobre los resultados y compartir el aprendizaje en equipo, como si fueran directores de animaciones mostrando sus creaciones.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Impresionantes animaciones, Genios! 🌟 Ahora, compartan sus creaciones: - Rookie: ¿Qué elementos encontraron en su exploración y cómo los animaron? - Master: ¿Cómo lograron que sus personajes interactuaran como amigos? - Hacker: ¿Cómo organizaron esa fiesta tan divertida en el parque? ¡Inspírense unos a otros con sus increíbles creaciones!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="10">
+             <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Formar equipos y promover el trabajo colaborativo para compartir ideas y mejorar las animaciones.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Formar equipos y promover el trabajo colaborativo para compartir ideas y mejorar las animaciones.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Creadores de Animaciones, es momento de formar equipos para trabajar juntos como verdaderos directores de cine! 🎬 Júntense con dos o tres compañeros que estén cerca para formar su equipo de animación en el parque. Juntos compartirán ideas, mejorarán sus proyectos y harán magia en la pantalla."</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Organizar equipos y roles para facilitar el trabajo colaborativo, asegurando que cada integrante tenga una tarea específica.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Cada equipo necesita un plan de trabajo! 🌟 Decidan juntos quién será: - Director de Animación: Lidera y organiza el proyecto. - Diseñador de Escenas: Revisa los detalles del fondo y los personajes. - Experto en Movimiento: Se enfoca en los movimientos y las acciones de los personajes. ¡Organícense en un minuto, Genios!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Distribuir las herramientas necesarias para la actividad, incluyendo Magic Tablets y otros materiales de registro.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Es hora de recoger las herramientas de animador! 🌟 Cada equipo necesitará sus Magic Tablets u otros materiales para registrar sus ideas y trabajar juntos. ¡Tienen 30 segundos para prepararse, directores, diseñadores y expertos en movimiento!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Revisar los proyectos de los compañeros y dar retroalimentación constructiva, enfocándose en los detalles y la creatividad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Directores, diseñadores y expertos en movimiento, a observar con atención! 🔎 Revisen las animaciones de sus compañeros y respondan estas preguntas: - ¿Qué les gustó más de la historia? - ¿Qué podrían mejorar para hacerla aún más emocionante? - ¿Qué detalles de movimiento y acción les inspiraron? ¡Sean curiosos y constructivos en sus comentarios!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Alternar roles para que cada estudiante sea maestro y aprendiz, compartiendo sus proyectos y recibiendo retroalimentación.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ahora es su turno de brillar como animadores! 🌟 Por turnos, expliquen cómo diseñaron sus proyectos: - ¿Qué personajes y movimientos crearon? - ¿Qué desafíos encontraron en su proceso? - ¿Qué hace que su animación sea única? El resto del equipo hará preguntas para aprender más. ¡Luego cambien de rol y muestren su talento!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-6">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (3 minutos):</strong> Colaborar para ajustar y mejorar los proyectos tras compartir aprendizajes, implementando las ideas sugeridas.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Es tiempo de perfeccionar sus animaciones, Genios! 🚀 Tomen las ideas que compartieron y ajusten sus creaciones. Recuerden, los detalles hacen la diferencia. ¡Trabajen juntos para que sus historias sean aún más geniales y emocionantes!"</td>
+                   </tr>
+                    <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-7">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (2 minutos):</strong> Reflexionar sobre la experiencia de trabajo en equipo y compartir aprendizajes clave de la creación de animaciones en el parque.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Directores, diseñadores y expertos en movimiento, reflexionemos sobre esta experiencia en el parque! 🌿 - ¿Qué aprendieron trabajando juntos en equipo? - ¿Cómo mejoraron sus proyectos gracias a las ideas de sus compañeros? - ¿Qué fue lo más divertido de crear animaciones juntos? ¡El trabajo en equipo siempre nos lleva a lo más alto en la creatividad!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+          <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="2.5">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 2.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                     Reflexión y organización para finalizar la misión.
+                </div>
+            </div>
+            <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Reflexionar sobre los objetivos iniciales y destacar los logros colectivos del grupo como creadores de animaciones en el parque.</td>
+                        <td style="padding: 10px; vertical-align: top;">“¡Creadores de Animaciones, qué día tan increíble hemos tenido en el parque! 🌿 Reflexionemos juntos: - ¿Cumplimos nuestra misión de hoy? ¡Sí! Exploramos el parque, creamos interacciones divertidas entre personajes, y compartimos animaciones increíbles. ¡Todo gracias a su creatividad y trabajo en equipo! 🎨"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Reconocer los logros del grupo y despedir la clase con energía positiva, enfatizando su papel como creadores de animaciones.</td>
+                         <td style="padding: 10px; vertical-align: top;">“¡Felicidades, Genios Animadores! 🌟 Hoy se convirtieron en verdaderos directores de cine en el parque y crearon historias maravillosas. Cada movimiento, cada personaje, y cada reto superado es una prueba de su talento y habilidad. Recuerden siempre: ¡ustedes tienen el poder de construir mundos increíbles con su creatividad! ¡Nos vemos en nuestra próxima aventura!”</td>
+                   </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minutos):</strong> Promover la responsabilidad al devolver los materiales utilizados y organizar el espacio de trabajo, dejando el laboratorio listo para futuras creaciones.</td>
+                        <td style="padding: 10px; vertical-align: top;">“Antes de despedirnos de nuestro estudio de animación, debemos dejar todo listo para nuestra próxima creación! 🌿 Por favor, devuelvan las Magic Tablets y todos los materiales a su lugar. Recuerden que un espacio limpio nos inspira para seguir creando y aprendiendo. ¡Gracias por su colaboración!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
